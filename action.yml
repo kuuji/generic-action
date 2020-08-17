@@ -1,0 +1,16 @@
+name: 'Generic action'
+description: 'Run any command in  any image'
+inputs:
+  image:  
+    description: 'URI of the image to run'
+    required: false
+    default: 'docker-virtual.jfrog.prodigygame.org/pants:python3.7-pants1.27.0rc0'
+  command:  
+    description: 'command to run'
+    required: false
+    default: 'pwd'
+runs:
+  using: 'docker'
+  image: ${{ inputs.image }}
+  args:
+    - ${{ inputs.command }}
