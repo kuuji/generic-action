@@ -11,6 +11,6 @@ inputs:
     default: 'pwd'
 runs:
   using: 'docker'
-  image: ${{ inputs.image }}
+  image: '${{ inputs.image }}'
   args:
     - ${{ inputs.command }}
